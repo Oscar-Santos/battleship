@@ -16,4 +16,13 @@ RSpec.describe Ship do
     cruiser = Ship.new("Cruiser", 3)
     expect(cruiser.health).to eq(3)
   end
+
+  it "does not sink if it has health" do
+  cruiser = Ship.new("Cruiser", 3)
+  cruiser.hit
+  expect(cruiser.health).to be(2)
+  cruiser.hit
+  expect(cruiser.health).to be(1)
+  expect(cruiser.sunk?).to be(false)
+  end
 end
