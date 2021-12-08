@@ -7,8 +7,11 @@ class Ship
   end
 
   def sunk?
-  @health > 0
-    false
+    if @health > 0
+        false
+      elsif @health == 0
+        true
+      end
   end
 
   def hit
