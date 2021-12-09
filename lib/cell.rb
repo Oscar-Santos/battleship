@@ -8,5 +8,10 @@ class Cell
   end
 
   def empty?
+    if @ship == nil
+      true
+    else @ship == ship
+      false
+    end
   end
 end
