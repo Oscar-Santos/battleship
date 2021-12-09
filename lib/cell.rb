@@ -34,6 +34,8 @@ class Cell
       "M"
     elsif ship && show
       "S"
+    elsif ship && @fired_upon
+      "H"
     else
       "."
     end
