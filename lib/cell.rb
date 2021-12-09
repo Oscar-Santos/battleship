@@ -28,4 +28,12 @@ class Cell
     @ship.hit if empty? != true
     @fired_upon = true
   end
+
+  def render
+    if empty? && @fired_upon
+      "M"
+    else
+      "."
+    end
+  end 
 end
