@@ -54,4 +54,12 @@ RSpec.describe Cell do
     expect(cell_2.render).to eq(".")
   end
 
+  it 'is S if there is a ship and show = true' do
+    cell_2 = Cell.new("C3")
+    cruiser = Ship.new("Cruiser", 3)
+    cell_2.place_ship(cruiser)
+    cell_2.render
+    cell_2.render(true)
+    expect(cell_2.render(true)).to eq("S")
+  end
 end
