@@ -29,11 +29,13 @@ class Cell
     @fired_upon = true
   end
 
-  def render
+  def render(show = false)
     if empty? && @fired_upon
       "M"
+    elsif ship && show
+      "S"
     else
       "."
     end
-  end 
+  end
 end
