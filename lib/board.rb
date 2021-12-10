@@ -24,7 +24,7 @@ class Board
   end
 
   def valid_coordinate?(coordinate)
-    if @cells[coordinate].class == Cell
+    if @cells.keys.include?(coordinate)
       true
     else
       false
