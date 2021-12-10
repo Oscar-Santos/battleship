@@ -22,4 +22,7 @@ class Board
     }
   end
 
+  def valid_coordinate?(coordinate)
+  end
+
 end
