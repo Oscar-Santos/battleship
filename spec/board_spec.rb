@@ -29,4 +29,14 @@ RSpec.describe Board do
     expect(board.valid_coordinate?("A32")).to eq(false)
     expect(board.valid_coordinate?("A3")).to eq(true)
   end
+
+  it 'occupies coordinates that are equal to the length of the ship' do
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    expect(board.valid_placement?(cruiser, ["A1", "A2"])).to eq(false)
+    expect(board.valid_placement?(submarine, ["A2", "A3", "A4"])).to eq(false)
+    expect(board.valid_placement?(cruiser, ["A1", "A2", "A3"])).to eq(true)
+    expect(board.valid_placement?(submarine, ["A2", "A3"])).to eq(true)
+  end
 end
