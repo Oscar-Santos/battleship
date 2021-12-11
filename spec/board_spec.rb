@@ -39,4 +39,16 @@ RSpec.describe Board do
     expect(board.valid_placement?(cruiser, ["A1", "A2", "A3"])).to eq(true)
     expect(board.valid_placement?(submarine, ["A2", "A3"])).to eq(true)
   end
+
+  it 'ensures horizontal numbers are consecutive' do
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    # require "pry"; binding.pry
+    expect(board.consecutive_numbers(["A1", "A2", "A3"])).to eq(true)
+    expect(board.consecutive_numbers(["B2", "B3", "B4"])).to eq(true)
+    expect(board.consecutive_numbers(["C1", "C3", "C4"])).to eq(false)
+    expect(board.consecutive_numbers(["D1", "D4", "D2"])).to eq(false)
+    expect(board.consecutive_numbers(["B4", "B2", "B1"])).to eq(false)
+  end
 end
