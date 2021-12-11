@@ -39,4 +39,36 @@ class Board
     end
   end
 
+  # checks if numbers are consecutive
+  # sorts through array and returns an array of numbers that correlate with row of numbers
+  def consecutive_numbers(coordinates)
+    x = coordinates.map do |coordinate|
+      #  => "A1"
+      coordinate.split("")
+      # => ["A", "1"]
+    end.map do |number|
+      number.last
+      # => ["1" "2" "3"]
+    end
+    # accounts for submarine
+    if x.length == 2
+      # if second number generated from array above - first number
+      # == 1 then it is consecutive. ex; A1 and A2 => 2-1 == 1
+      if x[1].to_i - x[0].to_i == 1
+        true
+      else
+        false
+      end
+      # accounts for cruiser
+    elsif x.length == 3
+      # if third number generated from array above - first number
+      # == 2 then it is consecutive
+      if x[2].to_i - x[0].to_i == 2
+        true
+      else
+        false
+      end
+    end
+  end
+
 end
