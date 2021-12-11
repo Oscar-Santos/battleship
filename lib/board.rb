@@ -71,6 +71,13 @@ class Board
     end
   end
 
-  def consecutive_letters(coordinate)
+  def consecutive_letters(coordinates)
+    y = coordinates.map do |coordinate|
+      coordinate.split("")
+    end.map do |letter|
+      letter.first
+    end
+
+   
   end
 end
