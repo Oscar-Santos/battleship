@@ -51,4 +51,16 @@ RSpec.describe Board do
     expect(board.consecutive_numbers(["D1", "D4", "D2"])).to eq(false)
     expect(board.consecutive_numbers(["B4", "B2", "B1"])).to eq(false)
   end
+
+  it 'make sure vertical numbers are consecutive' do
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    expect(board.consecutive_letters(["A2", "B2"])).to eq(true)
+    expect(board.consecutive_letters(["B3", "C3", "D3"])).to eq(true)
+    expect(board.consecutive_letters(["A1", "A2", "A3"])).to eq(false)
+    expect(board.consecutive_letters(["C1", "C3"])).to eq(false)
+    expect(board.consecutive_letters(["D1", "D4", "D2"])).to eq(false)
+    expect(board.consecutive_letters(["B4", "B2", "B1"])).to eq(false)
+  end
 end
