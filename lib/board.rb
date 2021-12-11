@@ -78,6 +78,19 @@ class Board
       letter.first
     end
 
-   
+    if y.length == 2
+       if y[1].ord - y[0].ord == 1
+         true
+       else
+         false
+       end
+
+     elsif y.length == 3
+       if y[2].ord - y[0].ord == 2
+         true
+       else
+         false
+       end
+     end
   end
 end
