@@ -71,4 +71,6 @@ class Board
     end
   end
 
+  def consecutive_letters(coordinate)
+  end
 end
