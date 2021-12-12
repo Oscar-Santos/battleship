@@ -8,4 +8,14 @@ RSpec.describe Player do
     player = Player.new
     expect(player).to be_instance_of(Player)
   end
-end 
+
+  it 'has a board and ship attributes' do
+    player = Player.new
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    expect(player.board).to be_instance_of(Board)
+    expect(player.cruiser).to be_instance_of(Ship)
+    expect(player.submarine).to be_instance_of(Ship)
+  end
+end
