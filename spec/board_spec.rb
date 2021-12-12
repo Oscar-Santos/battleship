@@ -70,5 +70,5 @@ RSpec.describe Board do
     expect(board.same_number(["C2", "C3"])).to eq(false)
     expect(board.same_number(["A1", "B1", "C1"])).to eq(true)
   end
-  
+
 end
