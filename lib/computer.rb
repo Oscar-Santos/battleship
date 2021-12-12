@@ -22,5 +22,15 @@ class Computer
   end
 
   def place_submarine
+    loop do
+      submarine_coordinates = []
+      until submarine_coordinates.length == submarine.length do
+        submarine_coordinates << board.cells.keys.sample
+      end
+      if board.valid_placement?(submarine, submarine_coordinates)
+        @board.place(submarine, submarine_coordinates)
+        break
+      end
+    end
   end
 end
