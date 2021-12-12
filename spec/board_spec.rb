@@ -44,7 +44,6 @@ RSpec.describe Board do
     board = Board.new
     cruiser = Ship.new("Cruiser", 3)
     submarine = Ship.new("Submarine", 2)
-    # require "pry"; binding.pry
     expect(board.consecutive_numbers(["A1", "A2", "A3"])).to eq(true)
     expect(board.consecutive_numbers(["B2", "B3", "B4"])).to eq(true)
     expect(board.consecutive_numbers(["C1", "C3", "C4"])).to eq(false)
@@ -63,4 +62,13 @@ RSpec.describe Board do
     expect(board.consecutive_letters(["D1", "D4", "D2"])).to eq(false)
     expect(board.consecutive_letters(["B4", "B2", "B1"])).to eq(false)
   end
+
+  it 'can check if coordinates share same number' do
+    board = Board.new
+    cruiser = Ship.new("Cruiser", 3)
+    submarine = Ship.new("Submarine", 2)
+    expect(board.same_number(["C2", "C3"])).to eq(false)
+    expect(board.same_number(["A1", "B1", "C1"])).to eq(true)
+  end
+  
 end
