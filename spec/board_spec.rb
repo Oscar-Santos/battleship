@@ -70,5 +70,13 @@ RSpec.describe Board do
     expect(board.same_number(["C2", "C3"])).to eq(false)
     expect(board.same_number(["A1", "B1", "C1"])).to eq(true)
   end
-  
+
+  it 'can check if coordinates share same letter' do
+   board = Board.new
+   cruiser = Ship.new("Cruiser", 3)
+   submarine = Ship.new("Submarine", 2)
+   expect(board.same_letter(["C1", "C2"])).to eq(true)
+   expect(board.same_letter(["A1", "B1"])).to eq(false)
+ end
+
 end
