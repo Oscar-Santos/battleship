@@ -91,4 +91,11 @@ class Board
       target_number == cord[-1]
     end
   end
+
+  def same_letter(coordinates)
+    target_letter = coordinates.first[0]
+    coordinates.all? do |cord|
+      target_letter == cord[0]
+    end
+  end
 end
