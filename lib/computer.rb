@@ -21,5 +21,6 @@ class Computer
       end
   end
 
-
+  def place_submarine
+  end
 end
