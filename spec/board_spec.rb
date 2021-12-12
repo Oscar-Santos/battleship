@@ -116,7 +116,7 @@ RSpec.describe Board do
     expect(cell_2.ship).to eq(cruiser)
     expect(cell_3.ship).to eq(cruiser)
     expect(cell_3.ship == cell_2.ship).to eq(true)
-  end
+end
 
   it 'ensures ships do not overlap' do
     board = Board.new
