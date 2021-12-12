@@ -32,8 +32,12 @@ class Board
   end
 
   def valid_placement?(ship, coordinates)
-    if ship.length == coordinates.length
-      true
+    if ship.length == coordinates.length && !coordinates.any? {|coordinate| @cells[coordinate].ship} == true
+      if consecutive_numbers(coordinates) && same_letter(coordinates) || consecutive_letters(coordinates) && same_number(coordinates)
+        true
+      else
+        false
+      end
     else
       false
     end
@@ -83,5 +87,33 @@ class Board
         false
       end
     end
+  end
+
+  def same_number(coordinates)
+    target_number = coordinates.first[-1]
+    coordinates.all? do |cord|
+      target_number == cord[-1]
+    end
+  end
+
+  def same_letter(coordinates)
+    target_letter = coordinates.first[0]
+    coordinates.all? do |cord|
+      target_letter == cord[0]
+    end
+  end
+
+  def place(ship, coordinates)
+    coordinates.map do |coordinate|
+      @cells[coordinate].place_ship(ship)
+    end
+  end
+
+  def render(show = false)
+    "  1 2 3 4 \n" +
+    "A #{@cells["A1"].render(show)} #{@cells["A2"].render(show)} #{@cells["A3"].render(show)} #{@cells["A4"].render(show)} \n" +
+    "B #{@cells["B1"].render(show)} #{@cells["B2"].render(show)} #{@cells["B3"].render(show)} #{@cells["B4"].render(show)} \n" +
+    "C #{@cells["C1"].render(show)} #{@cells["C2"].render(show)} #{@cells["C3"].render(show)} #{@cells["C4"].render(show)} \n" +
+    "D #{@cells["D1"].render(show)} #{@cells["D2"].render(show)} #{@cells["D3"].render(show)} #{@cells["D4"].render(show)} \n"
   end
 end
