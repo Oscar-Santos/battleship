@@ -84,4 +84,7 @@ class Board
       end
     end
   end
+
+  def same_number(coordinates)
+  end
 end
