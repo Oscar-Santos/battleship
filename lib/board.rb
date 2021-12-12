@@ -102,4 +102,10 @@ class Board
       target_letter == cord[0]
     end
   end
+
+  def place(ship, coordinates)
+    coordinates.map do |coordinate|
+      @cells[coordinate].place_ship(ship)
+    end
+  end
 end
