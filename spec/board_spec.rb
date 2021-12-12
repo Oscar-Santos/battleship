@@ -19,7 +19,7 @@ RSpec.describe Board do
     expect(board.cells.values.length).to eq(16)
   end
 
-  it 'can validate coordinates' do
+  it 'can validate single coordinates' do
     board = Board.new
     expect(board.valid_coordinate?("A1")).to eq(true)
     expect(board.valid_coordinate?("D4")).to eq(true)
@@ -78,5 +78,15 @@ RSpec.describe Board do
    expect(board.same_letter(["C1", "C2"])).to eq(true)
    expect(board.same_letter(["A1", "B1"])).to eq(false)
  end
+
+ it 'can validate that a set of coordinates are consecutive' do
+  board = Board.new
+  cruiser = Ship.new("Cruiser", 3)
+  submarine = Ship.new("Submarine", 2)
+  expect(board.valid_placement?(cruiser, ["A1", "A2"])).to eq(false)
+  expect(board.valid_placement?(submarine, ["A1", "C1"])).to eq(false)
+  expect(board.valid_placement?(cruiser, ["A3", "A2", "A1"])).to eq(false)
+  expect(board.valid_placement?(submarine, ["C1", "B1"])).to eq(false)
+end
 
 end
