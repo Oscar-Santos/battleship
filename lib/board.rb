@@ -32,8 +32,12 @@ class Board
   end
 
   def valid_placement?(ship, coordinates)
-    if ship.length == coordinates.length && consecutive_numbers(coordinates) && same_letter(coordinates) || consecutive_letters(coordinates) && same_number(coordinates)
-      true
+    if ship.length == coordinates.length
+      if consecutive_numbers(coordinates) && same_letter(coordinates) || consecutive_letters(coordinates) && same_number(coordinates)
+        true
+      else
+        false
+      end
     else
       false
     end
@@ -89,6 +93,19 @@ class Board
     target_number = coordinates.first[-1]
     coordinates.all? do |cord|
       target_number == cord[-1]
+    end
+  end
+
+  def same_letter(coordinates)
+    target_letter = coordinates.first[0]
+    coordinates.all? do |cord|
+      target_letter == cord[0]
+    end
+  end
+
+  def place(ship, coordinates)
+    coordinates.map do |coordinate|
+      @cells[coordinate].place_ship(ship)
     end
   end
 end
