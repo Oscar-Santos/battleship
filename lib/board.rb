@@ -86,5 +86,9 @@ class Board
   end
 
   def same_number(coordinates)
+    target_number = coordinates.first[-1]
+    coordinates.all? do |cord|
+      target_number == cord[-1]
+    end
   end
 end
