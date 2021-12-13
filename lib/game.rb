@@ -61,5 +61,7 @@ class Game
     player_sunk == 2
   end
 
-  
+  def computer_loses
+    computer_sunk == 2
+  end
 end
