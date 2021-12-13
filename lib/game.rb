@@ -32,4 +32,9 @@ class Game
     puts player.board.render(show = true)
     player.place_submarine
   end
+
+  def computer_setup
+    computer.place_cruiser
+    computer.place_submarine
+  end
 end
