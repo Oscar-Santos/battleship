@@ -27,6 +27,21 @@ class Game
     end
   end
 
+  def start
+    main_menu
+
+    puts "I have laid out my ships on the grid."
+    puts "You now need to lay out your two ships."
+    puts "The Cruiser is three units long and the Submarine is two units long."
+    puts "The board is below"
+    puts player.board.render
+
+    player_setup
+    computer_setup
+
+    # We'll add play method here once created 
+  end
+
   def player_setup
     player.place_cruiser
     puts player.board.render(show = true)
