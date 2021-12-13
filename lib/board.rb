@@ -32,6 +32,7 @@ class Board
   end
 
   def valid_placement?(ship, coordinates)
+    # require "pry"; binding.pry
     if ship.length == coordinates.length && !coordinates.any? {|coordinate| @cells[coordinate].ship} == true
       if consecutive_numbers(coordinates) && same_letter(coordinates) || consecutive_letters(coordinates) && same_number(coordinates)
         true
@@ -39,13 +40,14 @@ class Board
         false
       end
     else
+      # require "pry"; binding.pry
       false
     end
   end
 
   def consecutive_numbers(coordinates)
-     grid_number = coordinates.map do |coordinate|
-     coordinate.split("")
+    grid_number = coordinates.map do |coordinate|
+    coordinate.split("")
     end.map do |number|
       number.last
     end
@@ -59,13 +61,12 @@ class Board
 
     elsif grid_number.length == 3
       if grid_number[2].to_i - grid_number[0].to_i == 2
-         true
+        true
       else
         false
       end
     end
   end
-
 
 #each_cons method
 

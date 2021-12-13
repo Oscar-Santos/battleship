@@ -15,7 +15,7 @@ class Turn
 
   def render_boards
     puts "-------------COMPUTER BOARD--------------"
-    puts @computer.board.render
+    puts @computer.board.render(show = true)
     puts "--------------PLAYER BOARD----------------"
     puts @player.board.render(show = true)
   end
@@ -45,8 +45,10 @@ class Turn
     until player.board.valid_coordinate?(computer_input) && (player.board.cells[computer_input].fired_upon? == false)
       computer_input = player.board.cells.keys.sample
     end
+
     @player.board.cells[computer_input].fire_upon
     if player.board.cells[computer_input].render(show = true) == "M"
+      # require "pry"; binding.pry
       puts "Computer shot on #{computer_input} was a miss."
     elsif player.board.cells[computer_input].render(show = true) == "H"
       puts "Computer shot on #{computer_input} was a hit."
