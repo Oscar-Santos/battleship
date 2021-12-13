@@ -1,6 +1,5 @@
-require './lib/game'
 require './lib/board'
-
+require './lib/game'
 class Turn
   attr_reader :player,
               :computer,
