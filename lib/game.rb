@@ -56,4 +56,10 @@ class Game
     computer.place_cruiser
     computer.place_submarine
   end
+
+  def player_loses
+    player_sunk == 2
+  end
+
+  
 end
