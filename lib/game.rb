@@ -7,11 +7,15 @@ require './lib/turn'
 
 class Game
   attr_reader :computer,
-              :player
+              :player,
+              :computer_sunk,
+              :player_sunk
 
   def initialize(computer, player)
     @computer = computer
     @player = player
+    @computer_sunk = 0
+    @player_sunk = 0
   end
 
   def main_menu
@@ -39,7 +43,7 @@ class Game
     player_setup
     computer_setup
 
-    # We'll add play method here once created 
+    # We'll add play method here once created
   end
 
   def player_setup
