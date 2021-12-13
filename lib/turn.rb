@@ -21,4 +21,7 @@ class Turn
   puts "--------------PLAYER BOARD----------------"
   puts @player.board.render(show = true)
   end
+
+  def player_turn(player)
+  end
 end
