@@ -42,9 +42,34 @@ class Game
 
     player_setup
     computer_setup
-
-    # We'll add play method here once created
+    play
   end
+
+  def play
+    loop do
+
+      turn = Turn.new(player, computer)
+      turn.render_boards
+      turn.player_turn(player)
+      turn.computer_turn(computer)
+      @computer_sunk += turn.computer_sunk
+      @player_sunk += turn.player_sunk
+      if computer_loses
+        p "***** Victory! ******"
+        turn.render_boards
+        break
+      elsif player_loses
+        turn.render_boards
+        p "***** Puny human, I win. *****"
+        turn.render_boards(computer, player)
+        break
+      else
+        next
+      end
+    end
+    start
+  end
+
 
   def player_setup
     player.place_cruiser
