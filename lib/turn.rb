@@ -17,9 +17,9 @@ class Turn
 
   def render_boards
     puts "-------------COMPUTER BOARD--------------"
-  puts @computer.board.render
-  puts "--------------PLAYER BOARD----------------"
-  puts @player.board.render(show = true)
+    puts @computer.board.render
+    puts "--------------PLAYER BOARD----------------"
+    puts @player.board.render(show = true)
   end
 
   def player_turn(player)
@@ -41,5 +41,20 @@ class Turn
   end
 
   def computer_turn(computer)
+    # takes a random number from the array of cell keys
+    computer_input = player.board.cells.keys.sample()
+    # until the coordinates randomly chosen are valid AND not fired upon, random coordinates will be chosen
+    until player.board.valid_coordinate?(computer_input) && (player.board.cells[computer_input].fired_upon? == false)
+      computer_input = player.board.cells.keys.sample
+    end
+    @player.board.cells[computer_input].fire_upon
+    if player.board.cells[computer_input].render(show = true) == "M"
+      puts "Computer shot on #{computer_input} was a miss."
+    elsif player.board.cells[computer_input].render(show = true) == "H"
+      puts "Computer shot on #{computer_input} was a hit."
+    elsif player.board.cells[computer_input].render(show = true) == "X"
+      puts "Computer shot on #{computer_input} sunk your #{player.board.cells[computer_input].ship.name}!"
+      @player_sunk += 1
+    end
   end
 end
