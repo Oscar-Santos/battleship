@@ -44,44 +44,47 @@ class Board
   end
 
   def consecutive_numbers(coordinates)
-    x = coordinates.map do |coordinate|
-      coordinate.split("")
+     grid_number = coordinates.map do |coordinate|
+     coordinate.split("")
     end.map do |number|
       number.last
     end
 
-    if x.length == 2
-      if x[1].to_i - x[0].to_i == 1
+    if grid_number.length == 2
+      if grid_number[1].to_i - grid_number[0].to_i == 1
         true
       else
         false
       end
 
-    elsif x.length == 3
-      if x[2].to_i - x[0].to_i == 2
-        true
+    elsif grid_number.length == 3
+      if grid_number[2].to_i - grid_number[0].to_i == 2
+         true
       else
         false
       end
     end
   end
 
+
+#each_cons method
+
   def consecutive_letters(coordinates)
-    y = coordinates.map do |coordinate|
+    grid_letters = coordinates.map do |coordinate|
       coordinate.split("")
     end.map do |letter|
       letter.first
     end
 
-    if y.length == 2
-      if y[1].ord - y[0].ord == 1
+    if grid_letters.length == 2
+      if grid_letters[1].ord - grid_letters[0].ord == 1
         true
       else
         false
       end
 
-    elsif y.length == 3
-      if y[2].ord - y[0].ord == 2
+    elsif grid_letters.length == 3
+      if grid_letters[2].ord - grid_letters[0].ord == 2
         true
       else
         false

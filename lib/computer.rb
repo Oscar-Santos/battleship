@@ -19,7 +19,7 @@ class Computer
         @board.place(cruiser, cruiser_coordinates)
         break
       end
-    end 
+    end
   end
 
   def place_submarine
