@@ -39,4 +39,7 @@ class Turn
       puts "Please enter a valid coordinate."
     end
   end
+
+  def computer_turn(computer)
+  end
 end
