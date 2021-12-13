@@ -10,4 +10,11 @@ class Turn
     @player = player
     @computer = computer
   end
+
+  def render_boards
+    puts "-------------COMPUTER BOARD--------------"
+  puts @computer.board.render
+  puts "--------------PLAYER BOARD----------------"
+  puts @player.board.render(show = true)
+  end
 end
