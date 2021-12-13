@@ -27,4 +27,9 @@ class Game
     end
   end
 
+  def player_setup
+    player.place_cruiser
+    puts player.board.render(show = true)
+    player.place_submarine
+  end
 end
