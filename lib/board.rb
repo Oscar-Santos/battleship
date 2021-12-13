@@ -44,8 +44,8 @@ class Board
   end
 
   def consecutive_numbers(coordinates)
-    grid_number = coordinates.map do |coordinate|
-      coordinate.split("")
+     grid_number = coordinates.map do |coordinate|
+     coordinate.split("")
     end.map do |number|
       number.last
     end
@@ -59,12 +59,13 @@ class Board
 
     elsif grid_number.length == 3
       if grid_number[2].to_i - grid_number[0].to_i == 2
-        true
+         true
       else
         false
       end
     end
   end
+
 
 #each_cons method
 

@@ -38,7 +38,6 @@ class Game
     puts "You now need to lay out your two ships."
     puts "The Cruiser is three units long and the Submarine is two units long."
     puts "The board is below"
-
     puts player.board.render
 
     player_setup
