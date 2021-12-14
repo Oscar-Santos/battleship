@@ -1,7 +1,7 @@
 class Computer
   attr_reader :board,
-  :cruiser,
-  :submarine
+              :cruiser,
+              :submarine
 
   def initialize
     @board = Board.new
@@ -18,29 +18,12 @@ class Computer
       board.place(cruiser, cruiser_coordinates)
   end
 
-  # def place_cruiser
-  #   loop do
-  #     cruiser_coordinates = []
-  #     until cruiser_coordinates.length == cruiser.length do
-  #       cruiser_coordinates << board.cells.keys.sample
-  #     end
-  #     if board.valid_placement?(cruiser, cruiser_coordinates)
-  #       @board.place(cruiser, cruiser_coordinates)
-  #       break
-  #     end
-  #   end
-  # end
-
   def place_submarine
-    loop do
+      all_coordinates = board.cells.keys
       submarine_coordinates = []
-      until submarine_coordinates.length == submarine.length do
-        submarine_coordinates << board.cells.keys.sample
+      until board.valid_placement?(submarine, submarine_coordinates)
+        submarine_coordinates = all_coordinates.sample(2)
       end
-      if board.valid_placement?(submarine, submarine_coordinates)
-        @board.place(submarine, submarine_coordinates)
-        break
-      end
-    end
+      board.place(submarine, submarine_coordinates)
   end
 end
