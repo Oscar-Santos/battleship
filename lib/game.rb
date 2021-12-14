@@ -29,12 +29,17 @@ class Game
     puts ""
     puts "Enter p to play. Enter q to quit."
     response = gets.chomp.downcase
+
     if response == "p"
       puts "Excellent. Let us commence."
+
     elsif response == "q"
       puts "Too bad, come back sometime!"
+      abort(main_menu)
+
     else response != "p" || "q"
       puts "Invalid response, please try again."
+      abort(main_menu)
     end
   end
 
