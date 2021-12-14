@@ -14,15 +14,19 @@ class Turn
   end
 
   def render_boards
+    puts "︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵"
     puts "-------------COMPUTER BOARD--------------"
     puts @computer.board.render(show = true)
+    puts " "
     puts "--------------PLAYER BOARD----------------"
     puts @player.board.render(show = true)
+    puts "︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶"
   end
 
   def player_turn(player)
     puts "Enter the coordinate for your shot:"
     player_input = gets.chomp.upcase
+    puts " "
     if computer.board.valid_coordinate?(player_input) == true
       computer.board.cells[player_input].fire_upon
       if computer.board.cells[player_input].render(show = true) == "M"
