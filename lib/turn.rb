@@ -15,7 +15,7 @@ class Turn
 
   def render_boards
     puts "-------------COMPUTER BOARD--------------"
-    puts @computer.board.render(show = true)
+    puts @computer.board.render(show = false)
     puts "--------------PLAYER BOARD----------------"
     puts @player.board.render(show = true)
   end
