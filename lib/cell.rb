@@ -30,14 +30,14 @@ class Cell
   end
 
   def render(show = false)
-    if empty? && @fired_upon
-      "M"
-    elsif ship && show
-      "S"
-    elsif ship && ship.health <= 0
+    if ship && ship.health <= 0
       "X"
+    elsif empty? && @fired_upon
+      "M"
     elsif ship && @fired_upon
       "H"
+    elsif ship && show
+      "S"
     else
       "."
     end

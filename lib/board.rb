@@ -2,7 +2,7 @@ class Board
   attr_reader :cells
 
   def initialize
-  @cells =
+    @cells =
     {
       "A1" => Cell.new("A1"),
       "A2" => Cell.new("A2"),
@@ -32,42 +32,34 @@ class Board
   end
 
   def valid_placement?(ship, coordinates)
-    if ship.length == coordinates.length && !coordinates.any? {|coordinate| @cells[coordinate].ship} == true
-      if consecutive_numbers(coordinates) && same_letter(coordinates) || consecutive_letters(coordinates) && same_number(coordinates)
-        true
-      else
-        false
-      end
-    else
-      false
-    end
+    ship.length == coordinates.length &&
+    !coordinates.any? {|coordinate| @cells[coordinate].ship} &&
+    (consecutive_numbers(coordinates) && same_letter(coordinates) ||
+    consecutive_letters(coordinates) && same_number(coordinates))
   end
 
   def consecutive_numbers(coordinates)
-     grid_number = coordinates.map do |coordinate|
-     coordinate.split("")
+    grid_number = coordinates.map do |coordinate|
+      coordinate.split("")
     end.map do |number|
       number.last
     end
 
-    if grid_number.length == 2
+    if grid_number.length == 3
+      if grid_number[2].to_i - grid_number[0].to_i == 2 && grid_number[2].to_i - grid_number[1].to_i == 1
+        true
+      else
+        false
+      end
+
+    elsif grid_number.length == 2
       if grid_number[1].to_i - grid_number[0].to_i == 1
         true
       else
         false
       end
-
-    elsif grid_number.length == 3
-      if grid_number[2].to_i - grid_number[0].to_i == 2
-         true
-      else
-        false
-      end
     end
   end
-
-
-#each_cons method
 
   def consecutive_letters(coordinates)
     grid_letters = coordinates.map do |coordinate|
@@ -76,15 +68,15 @@ class Board
       letter.first
     end
 
-    if grid_letters.length == 2
-      if grid_letters[1].ord - grid_letters[0].ord == 1
+    if grid_letters.length == 3
+      if grid_letters[2].ord - grid_letters[1].ord == 1 && grid_letters[2].ord - grid_letters[0].ord == 2
         true
       else
         false
       end
 
-    elsif grid_letters.length == 3
-      if grid_letters[2].ord - grid_letters[0].ord == 2
+    elsif grid_letters.length == 2
+      if grid_letters[1].ord - grid_letters[0].ord == 1
         true
       else
         false

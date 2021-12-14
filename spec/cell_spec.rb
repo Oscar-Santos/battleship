@@ -14,9 +14,9 @@ RSpec.describe Cell do
   end
 
   it 'can be empty' do
-   cell = Cell.new("B4")
-   expect(cell.ship).to eq(nil)
-   expect(cell.empty?).to eq(true)
+    cell = Cell.new("B4")
+    expect(cell.ship).to eq(nil)
+    expect(cell.empty?).to eq(true)
   end
 
   it 'can be occupied by a ship' do

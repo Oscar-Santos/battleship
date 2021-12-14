@@ -10,28 +10,20 @@ class Computer
   end
 
   def place_cruiser
-    loop do
-      cruiser_coordinates = []
-      until cruiser_coordinates.length == cruiser.length do
-        cruiser_coordinates << board.cells.keys.sample
-      end
-      if board.valid_placement?(cruiser, cruiser_coordinates)
-        @board.place(cruiser, cruiser_coordinates)
-        break
-      end
+    all_coordinates = board.cells.keys
+    cruiser_coordinates = []
+    until board.valid_placement?(cruiser, cruiser_coordinates)
+      cruiser_coordinates = all_coordinates.sample(3)
     end
+    board.place(cruiser, cruiser_coordinates)
   end
 
   def place_submarine
-    loop do
-      submarine_coordinates = []
-      until submarine_coordinates.length == submarine.length do
-        submarine_coordinates << board.cells.keys.sample
-      end
-      if board.valid_placement?(submarine, submarine_coordinates)
-        @board.place(submarine, submarine_coordinates)
-        break
-      end
+    all_coordinates = board.cells.keys
+    submarine_coordinates = []
+    until board.valid_placement?(submarine, submarine_coordinates)
+      submarine_coordinates = all_coordinates.sample(2)
     end
+    board.place(submarine, submarine_coordinates)
   end
 end

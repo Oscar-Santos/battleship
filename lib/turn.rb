@@ -1,6 +1,5 @@
-require './lib/game'
 require './lib/board'
-
+require './lib/game'
 class Turn
   attr_reader :player,
               :computer,
@@ -15,15 +14,19 @@ class Turn
   end
 
   def render_boards
+    puts "︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵︵"
     puts "-------------COMPUTER BOARD--------------"
-    puts @computer.board.render
+    puts @computer.board.render(show = false)
+    puts " "
     puts "--------------PLAYER BOARD----------------"
     puts @player.board.render(show = true)
+    puts "︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶︶"
   end
 
   def player_turn(player)
     puts "Enter the coordinate for your shot:"
     player_input = gets.chomp.upcase
+    puts " "
     if computer.board.valid_coordinate?(player_input) == true
       computer.board.cells[player_input].fire_upon
       if computer.board.cells[player_input].render(show = true) == "M"
@@ -40,12 +43,11 @@ class Turn
   end
 
   def computer_turn(computer)
-    # takes a random number from the array of cell keys
     computer_input = player.board.cells.keys.sample()
-    # until the coordinates randomly chosen are valid AND not fired upon, random coordinates will be chosen
     until player.board.valid_coordinate?(computer_input) && (player.board.cells[computer_input].fired_upon? == false)
       computer_input = player.board.cells.keys.sample
     end
+
     @player.board.cells[computer_input].fire_upon
     if player.board.cells[computer_input].render(show = true) == "M"
       puts "Computer shot on #{computer_input} was a miss."
