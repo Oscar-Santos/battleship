@@ -70,15 +70,15 @@ class Board
       letter.first
     end
 
-    if grid_letters.length == 2
-      if grid_letters[1].ord - grid_letters[0].ord == 1
+    if grid_letters.length == 3
+      if grid_letters[2].ord - grid_letters[0].ord == 2
         true
       else
         false
       end
 
-    elsif grid_letters.length == 3
-      if grid_letters[2].ord - grid_letters[0].ord == 2
+    elsif grid_letters.length == 2
+      if grid_letters[1].ord - grid_letters[0].ord == 1
         true
       else
         false
