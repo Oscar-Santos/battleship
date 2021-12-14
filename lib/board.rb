@@ -2,7 +2,7 @@ class Board
   attr_reader :cells
 
   def initialize
-  @cells =
+    @cells =
     {
       "A1" => Cell.new("A1"),
       "A2" => Cell.new("A2"),
@@ -40,7 +40,7 @@ class Board
 
   def consecutive_numbers(coordinates)
     grid_number = coordinates.map do |coordinate|
-    coordinate.split("")
+      coordinate.split("")
     end.map do |number|
       number.last
     end
@@ -60,8 +60,6 @@ class Board
       end
     end
   end
-
-#each_cons method
 
   def consecutive_letters(coordinates)
     grid_letters = coordinates.map do |coordinate|

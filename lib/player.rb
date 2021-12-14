@@ -25,8 +25,8 @@ class Player
   end
 
   def place_submarine
-      valid_coordinates = false
-      until valid_coordinates == true do
+    valid_coordinates = false
+    until valid_coordinates == true do
       puts "Enter 2 coordinates for your submarine. For example:    A1, B1   or    A1, A2"
       puts " "
       submarine_coordinates = gets.chomp.upcase.gsub(',','').split
