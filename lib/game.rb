@@ -19,7 +19,14 @@ class Game
   end
 
   def main_menu
-    puts "Welcome to BATTLESHIP"
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
+          "   ____    _  _____ _____ _     _____ ____  _   _ ___ ____\n" +
+          "  | __ )  / ||_   _|_   _| |   | ____/ ___|| | | |_ _|  _  \n" +
+          "  |  _   / _|  | |   | | | |   |  _|  ___  | |_| || || |_) |\n" +
+          "  | |_) / __|  | |   | | | |___| |___ ___) |  _  || ||  __/\n" +
+          "  |____/_/  |  |_|   |_| |_____|_____|____/|_| |_|___|_|\n" +
+          "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts ""
     puts "Enter p to play. Enter q to quit."
     response = gets.chomp.downcase
     if response == "p"
@@ -38,6 +45,7 @@ class Game
     puts "You now need to lay out your two ships."
     puts "The Cruiser is three units long and the Submarine is two units long."
     puts "The board is below"
+
     puts player.board.render
 
     player_setup
