@@ -45,15 +45,15 @@ class Board
       number.last
     end
 
-    if grid_number.length == 2
-      if grid_number[1].to_i - grid_number[0].to_i == 1
+    if grid_number.length == 3
+      if grid_number[2].to_i - grid_number[0].to_i == 2 && grid_number[2].to_i - grid_number[1].to_i == 1
         true
       else
         false
       end
 
-    elsif grid_number.length == 3
-      if grid_number[2].to_i - grid_number[0].to_i == 2
+    elsif grid_number.length == 2
+      if grid_number[1].to_i - grid_number[0].to_i == 1
         true
       else
         false
@@ -71,7 +71,7 @@ class Board
     end
 
     if grid_letters.length == 3
-      if grid_letters[2].ord - grid_letters[0].ord == 2
+      if grid_letters[2].ord - grid_letters[1].ord == 1 && grid_letters[2].ord - grid_letters[0].ord == 2
         true
       else
         false
