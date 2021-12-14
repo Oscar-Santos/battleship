@@ -38,20 +38,6 @@ class Board
     consecutive_letters(coordinates) && same_number(coordinates))
   end
 
-
-  # def valid_placement?(ship, coordinates)
-  #   if ship.length == coordinates.length && !coordinates.any? {|coordinate| @cells[coordinate].ship} == true
-  #     if consecutive_numbers(coordinates) && same_letter(coordinates) || consecutive_letters(coordinates) && same_number(coordinates)
-  #       true
-  #     else
-  #       false
-  #     end
-  #   else
-  #     # require "pry"; binding.pry
-  #     false
-  #   end
-  # end
-
   def consecutive_numbers(coordinates)
     grid_number = coordinates.map do |coordinate|
     coordinate.split("")
