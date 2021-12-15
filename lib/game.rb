@@ -35,12 +35,12 @@ class Game
       puts "Excellent. Let us commence."
 
     elsif response == "q"
-      puts "Too bad, come back sometime!"
-      abort(main_menu)
+      puts "Goodbye"
+      exit
 
     else response != "p" || "q"
-      puts "Invalid response, please try again."
-      abort(main_menu)
+      puts ("Invalid input: please enter p to place. Enter q to quit.")
+      start
     end
   end
 
