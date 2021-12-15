@@ -1,4 +1,4 @@
-## BATTLESHIP ##
+# BATTLESHIP 
 
 Welcome to our Battleship Game !!!
 
@@ -12,13 +12,13 @@ Turing School of Software and Design.
 
 ## HOW TO PLAY 🚢
 
-* Run the Battleship Runner file in your terminal with the command:
+Run the Battleship Runner file in your terminal with the command:
 
-  `ruby battleship_runner.rb`
+`ruby battleship_runner.rb`
 
-  Then follow the prompts!
+Then follow the prompts!
   
 ##  CREDITS 🙏🏻
 
-* This project was made by Turing alumni Aedan Yturralde and Oscar Santos with help and 
-  support of our Turing mentor Jacob Arellano.
+This project was made by Turing alumni Aedan Yturralde and Oscar Santos with help and 
+support of our Turing mentor Jacob Arellano.
