@@ -6,10 +6,8 @@ Choose your coordinates, place your ships on the board, and play against the
 computer in this terminal-based adaptation of the classic board game from the
 1930's. This game became popular with French and Russian soldiers during World War I.
 
-We created this game as a paired project assignment in the First Module of
+We created this game using Ruby language as a paired project assignment in the First Module of
 Turing School of Software and Design.
-
-##  *^*^*^PLAY BATTLESHIP*^*^*^
 
 ![image](https://user-images.githubusercontent.com/67713820/146277076-fa61ca47-9862-4295-97bb-567778e35f3d.png)
 
