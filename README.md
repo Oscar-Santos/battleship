@@ -9,6 +9,8 @@ computer in this terminal-based adaptation of the classic board game from the
 We created this game using Ruby language as a paired project assignment in the First Module of
 Turing School of Software and Design.
 
+
+
 ![image](https://user-images.githubusercontent.com/67713820/146277076-fa61ca47-9862-4295-97bb-567778e35f3d.png)
 
 ## HOW TO PLAY 🚢
