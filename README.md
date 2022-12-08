@@ -9,6 +9,9 @@ computer in this terminal-based adaptation of the classic board game from the
 We created this game as a paired project assignment in the First Module of
 Turing School of Software and Design.
 
+##  *^*^*^PLAY BATTLESHIP*^*^*^
+
+![image](https://user-images.githubusercontent.com/67713820/146277076-fa61ca47-9862-4295-97bb-567778e35f3d.png)
 
 ## HOW TO PLAY 🚢
 
@@ -16,10 +19,7 @@ Run the Battleship Runner file in your terminal with the command:
 
 `ruby battleship_runner.rb`
 
-Then follow the prompts!
   
-
-### HOW TO PLAY:
  1. Clone this repository to your terminal.
 
 
@@ -48,14 +48,9 @@ Then follow the prompts!
   ![Screenshot 2021-12-15 at 4 37 39 PM](https://user-images.githubusercontent.com/67713820/146276081-18787a56-bb33-4714-8bdb-fc203b54c974.png)
 
 
-### Tested using RSpec 
+## Tested using RSpec 
 
 You can test any rspec file on the command line `rspec spec/file_name.rb`
-
-This project is the result of a partnership between 2 Module 1 students at Turing:
-
-[Steven James](https://github.com/stevenjames-turing) and 
-[Tamara Dowis](https://github.com/wanderlust-create)
 
 ## We hope you enjoy playing this as much as we enjoyed making it!
 
@@ -65,6 +60,4 @@ This project is the result of a partnership between 2 Module 1 students at Turin
 This project was made by Turing alumni Aedan Yturralde and Oscar Santos with help and 
 support of our Turing mentor Jacob Arellano.
 
-##  *^*^*^PLAY BATTLESHIP*^*^*^
 
-![image](https://user-images.githubusercontent.com/67713820/146277076-fa61ca47-9862-4295-97bb-567778e35f3d.png)
